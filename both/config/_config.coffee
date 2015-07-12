@@ -27,3 +27,6 @@ Avatar.options =
 Meteor.startup ->
 	if Meteor.isClient
 		TAPi18n.setLanguage('en')
+		$.getJSON 'http://api.wunderground.com/api/66cc45223c7fe53f/conditions/q/CA/San_Francisco.json', (data) ->
+	  window.weatherData = data.current_observation
+	  return
